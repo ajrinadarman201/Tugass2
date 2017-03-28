@@ -1,0 +1,126 @@
+1. classpath :
+
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
+
+
+
+
+
+2. project :
+
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>xmltest</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.pde.ManifestBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.pde.SchemaBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.pde.PluginNature</nature>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+</projectDescription>
+
+
+
+
+
+3. <?xml version="1.0" encoding="UTF-8"?> 
+<logbarang> 
+<barang>  
+	<kode>M4079</kode>  
+	<satuan>pc</satuan>  
+	<harga>10000</harga>  
+	<asal>   
+		<pt>AA</pt>   
+		<kodewlyh>10</kodewlyh>  
+	</asal>  
+	<tujuan>   
+		<pt>sipatokkong</pt>   
+		<kodewlyh>2002</kodewlyh>  
+	</tujuan> 
+</barang>  
+ 
+<barang>  
+	<kode>M1154</kode>  
+	<satuan>pc</satuan>  
+	<harga>5000</harga>  
+	<asal>   
+		<pt>A3</pt>   
+		<kodewlyh>201</kodewlyh>  
+	</asal>  
+	<tujuan>   
+		<pt>jaya abadi</pt>   
+		<kodewlyh>200</kodewlyh>  
+
+
+
+4. build.properties :
+
+source.. = src/
+output.. = bin/
+bin.includes = META-INF/,\
+
+
+
+5. logbarang.dtd
+
+<?xml encoding="UTF-8"?>
+
+<!ELEMENT logbarang (barang)+>
+<!ATTLIST logbarang
+    xmlns CDATA #FIXED ''>
+
+<!ELEMENT barang (kode,satuan,harga,asal,tujuan)>
+<!ATTLIST barang
+    xmlns CDATA #FIXED ''>
+
+<!ELEMENT kode (#PCDATA)>
+<!ATTLIST kode
+    xmlns CDATA #FIXED ''>
+
+<!ELEMENT satuan (#PCDATA)>
+<!ATTLIST satuan
+    xmlns CDATA #FIXED ''>
+
+<!ELEMENT harga (#PCDATA)>
+<!ATTLIST harga
+    xmlns CDATA #FIXED ''>
+
+<!ELEMENT asal (pt,kodewlyh)>
+<!ATTLIST asal
+    xmlns CDATA #FIXED ''>
+
+<!ELEMENT tujuan (pt,kodewlyh)>
+<!ATTLIST tujuan
+    xmlns CDATA #FIXED ''>
+
+<!ELEMENT pt (#PCDATA)>
+<!ATTLIST pt
+    xmlns CDATA #FIXED ''>
+
+<!ELEMENT kodewil (#PCDATA)>
+<!ATTLIST kodewil
+    xmlns CDATA #FIXED ''>
